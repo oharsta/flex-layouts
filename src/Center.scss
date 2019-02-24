@@ -1,0 +1,12 @@
+.center {
+  min-height: 100vh;
+  display: flex;
+
+  .dot {
+    background-color: green;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    margin: auto;
+  }
+}

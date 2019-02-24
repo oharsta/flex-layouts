@@ -1,0 +1,39 @@
+.holy-grail {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+
+  header, footer {
+    background-color: gold;
+    padding: 25px;
+  }
+
+  div.main {
+    display: flex;
+    flex-grow: 2;
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    div.sidebar {
+      background-color: purple;
+      padding: 25px;
+
+      &:nth-child(2) {
+        order: 3;
+        background-color: blue;
+
+        @media only screen and (max-width: 600px) {
+          order: 0;
+        }
+      }
+    }
+
+    div.content {
+      flex-grow: 2;
+      padding: 25px;
+      background-color: green;
+    }
+  }
+}

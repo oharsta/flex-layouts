@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import "./App.scss";
+import Center from "./Center";
+import EqualHeight from "./EqualHeight";
+import HolyGrail from "./HolyGrail";
+import NavLink from "react-router-dom/es/NavLink";
 
+const App = () => (
+    <Router>
+        <div className="app">
+            <ul>
+                <li>
+                    <NavLink activeClassName="is-active" to="/center">Center</NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="is-active" to="/equal-height">EqualHeight</NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="is-active" to="/holy-grail">HolyGrail</NavLink>
+                </li>
+            </ul>
+
+            <Route exact path="/center" component={Center}/>
+            <Route path="/equal-height" component={EqualHeight}/>
+            <Route path="/holy-grail" component={HolyGrail}/>
+        </div>
+    </Router>
+);
 export default App;
